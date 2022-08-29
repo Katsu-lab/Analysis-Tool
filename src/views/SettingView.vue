@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1 class="font-bold">This is a setting page</h1>
+    <h1>This is an setting page</h1>
   </div>
 </template>

@@ -7,22 +7,17 @@
     <router-link to="/setting">Setting</router-link>
   </nav>
   <div>
-    {{$t("message.hello")}}
+    {{$t("message")}}
   </div>
-  <hello-world/>
   <router-view/>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   name: 'HomeView',
 
-  components: {
-    HelloWorld,
-  },
 });
 </script>
 

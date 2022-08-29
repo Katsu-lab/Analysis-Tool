@@ -8,20 +8,16 @@ import '@/assets/css/style.css'
 
 const messages = {
     en: {
-      message: {
-        hello: 'hello world'
-      }
+      message: 'hello world'
     },
     ja: {
-      message: {
-        hello: 'こんにちは、世界'
-      }
+      message: 'こんにちは、世界'
     }
   }
 
 
 const i18n = createI18n({
-    locale: 'en',
+    locale: 'ja',
     messages,
 })
 
