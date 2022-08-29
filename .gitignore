@@ -23,7 +23,7 @@ pnpm-debug.log*
 *.sw?
 
 # Private data
-.mp4
-.mov
-.mp3
-.wave
+*.mp4
+*.mov
+*.mp3
+*.wave
