@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="h1">This is a setting page</h1>
-    <button class="btn-blue">test</button>
+    <h1 class="font-bold">This is a setting page</h1>
   </div>
 </template>
