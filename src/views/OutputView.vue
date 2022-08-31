@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <h1>This is an output page</h1>
-  </div>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-3 gap-4 mb-10">
     <div>
       <video-player :options="videoOptions1"/>
     </div>
@@ -10,19 +7,28 @@
       <video-player :options="videoOptions2"/>
     </div>
     <div>
+      <div class="flex justify-center">
+        <img src="@/assets/img/sample.png" alt="">
+      </div>
+      <result-section />
     </div>
   </div>
-  <div class="w-full">Voice Wave</div>
+  <div class="w-full">
+  </div>
 </template>
 
 <script>
 import VideoPlayer from "@/components/VideoSection.vue";
 import 'video.js/dist/video-js.css';
 
+import ResultSection from "@/components/ResultSection.vue"
+// import VoiceSection from "@/components/VoiceSection.vue"
+
 export default {
     name: "CareVideoPlayer",
     components: {
-        VideoPlayer,
+      VideoPlayer,
+      ResultSection
     },
     data() {
         return {

@@ -6,10 +6,7 @@
     <router-link to="/output">Output</router-link> |
     <router-link to="/setting">Setting</router-link>
   </nav>
-  <div>
-    {{$t("message")}}
-  </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>

@@ -5,12 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.markers.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.min.js" type="text/javascript"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
     <div id="app"></div>
+    <div id="waveform1" class="mt-10"></div>
+    <div id="waveform2" class="mt-30"></div>
   </body>
 </html>
+
+<script>
+  var wavesurfer1 = WaveSurfer.create({
+    container: '#waveform1',
+    waveColor: 'orange',
+    progressColor: 'purple',
+    backgroundColor: '',
+    plugins: [
+      WaveSurfer.regions.create({}),
+      WaveSurfer.markers.create({}),
+    ]
+  });
+  wavesurfer1.load('data/sample1.mp3');
+  wavesurfer1.addMarker({
+    time: 2 ,
+    label: 'Emotion: Happy',
+    color: 'red',
+    position: 'top',
+  });
+  wavesurfer1.addMarker({
+    time: 7,
+    label: 'Emotion: Sad',
+    color: 'blue',
+    position: 'top',
+  });
+  wavesurfer1.addMarker({
+    time: 4,
+    label: 'Voice: Low',
+    color: 'green',
+    position: 'bottom',
+  });
+
+  var wavesurfer2 = WaveSurfer.create({
+    container: '#waveform2',
+    waveColor: 'blue',
+    progressColor: 'purple',
+    backgroundColor: '',
+    plugins: [
+      WaveSurfer.regions.create({}),
+      WaveSurfer.markers.create({}),
+    ]
+  });
+  wavesurfer2.load('data/sample2.mp3');
+  wavesurfer2.addMarker({
+    time: 2,
+    label: 'Emotion: Neutral',
+    color: 'red',
+    position: 'top',
+  });
+  wavesurfer2.addMarker({
+    time: 7,
+    label: 'Emotion: Sad',
+    color: 'blue',
+    position: 'top',
+  });
+  wavesurfer2.addMarker({
+    time: 4,
+    label: 'Voice: Low',
+    color: 'green',
+    position: 'bottom',
+  });
+</script>
+
+<style>
+body {
+  background-color: #f0f2f5
+}
+</style>
